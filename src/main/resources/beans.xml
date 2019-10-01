@@ -5,24 +5,29 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="infoofactor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Akshay Kumar"></property>
-        <property name="Gender" value="Male"></property>
-        <property name="age" value="50"></property>
+    <bean id="akki" class="com.stackroute.domain.Actor">
+        <constructor-arg name="Name" value="Akshay Kumar" index="0"></constructor-arg>
+        <constructor-arg name="Gender" value="Male" index="1"></constructor-arg>
+        <constructor-arg name="Age" value="50" index="2"></constructor-arg>
     </bean>
-    <bean id="infoofactor1" class="com.stackroute.domain.Actor">
-        <property name="name" value="Ajay Devgan"></property>
-        <property name="Gender" value="Male"></property>
-        <property name="age" value="60"></property>
+    <bean id="ajju" class="com.stackroute.domain.Actor">
+        <constructor-arg name="Name" value="Ajay Devgan" index="0"></constructor-arg>
+        <constructor-arg name="Gender" value="Male" index="1"></constructor-arg>
+        <constructor-arg name="Age" value="60" index="2"></constructor-arg>
     </bean>
-    <bean id="infoofactor2" class="com.stackroute.domain.Actor">
-        <property name="name" value="Kriti Kharbanda"></property>
-        <property name="Gender" value="Female"></property>
-        <property name="age" value="28"></property>
+    <bean id="kk" class="com.stackroute.domain.Actor">
+        <constructor-arg name="Name" value="Kriti Kharbanda" index="0" type="String"></constructor-arg>
+        <constructor-arg name="Gender" value="Female" index="1" type="String"></constructor-arg>
+        <constructor-arg name="Age" value="28" index="2" type="int"></constructor-arg>
     </bean>
 
-    <bean id="Tees" class ="com.stackroute.domain.Movie">
-        <property name="Akki" ref="infoofactor1"/>
+    <bean name="MovieA,MovieB" class ="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="ajju"/>
     </bean>
+    <bean id="movie" class ="com.stackroute.domain.Movie">
+        <constructor-arg name="actor" ref="ajju"/>
+    </bean>
+
+
 
 </beans>

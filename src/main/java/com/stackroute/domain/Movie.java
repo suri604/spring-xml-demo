@@ -1,13 +1,14 @@
 package com.stackroute.domain;
 
 public class Movie {
-    private Actor Akki;
+    private Actor actor;
 
-    public void setAkki(Actor akki) {
-        this.Akki = akki;
+    public Movie(Actor actor) {
+        this.actor = actor;
     }
 
-    public void getAkki() {
-        Akki.display();
+    public void getactor()
+    {
+        actor.display();
     }
 }
