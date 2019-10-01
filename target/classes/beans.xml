@@ -5,27 +5,14 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="akki" class="com.stackroute.domain.Actor">
-        <constructor-arg name="Name" value="Akshay Kumar" index="0"></constructor-arg>
-        <constructor-arg name="Gender" value="Male" index="1"></constructor-arg>
-        <constructor-arg name="Age" value="50" index="2"></constructor-arg>
-    </bean>
-    <bean id="ajju" class="com.stackroute.domain.Actor">
-        <constructor-arg name="Name" value="Ajay Devgan" index="0"></constructor-arg>
-        <constructor-arg name="Gender" value="Male" index="1"></constructor-arg>
-        <constructor-arg name="Age" value="60" index="2"></constructor-arg>
-    </bean>
-    <bean id="kk" class="com.stackroute.domain.Actor">
-        <constructor-arg name="Name" value="Kriti Kharbanda" index="0" type="String"></constructor-arg>
-        <constructor-arg name="Gender" value="Female" index="1" type="String"></constructor-arg>
-        <constructor-arg name="Age" value="28" index="2" type="int"></constructor-arg>
+    <bean id="actor" class="com.stackroute.domain.Actor">
+        <constructor-arg name="Name" value="Akshay Kumar" ></constructor-arg>
+        <constructor-arg name="Gender" value="Male"></constructor-arg>
+        <constructor-arg name="Age" value="50"></constructor-arg>
     </bean>
 
-    <bean name="MovieA,MovieB" class ="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="ajju"/>
-    </bean>
-    <bean id="movie" class ="com.stackroute.domain.Movie">
-        <constructor-arg name="actor" ref="ajju"/>
+
+    <bean id="movie" class ="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
 
 
