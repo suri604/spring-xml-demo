@@ -18,6 +18,7 @@ public class Actor   {
 
     public void display()
     {
+
         System.out.println("name is : "+Name + " gender is : " +Gender + " age is : " +Age );
     }
 
