@@ -3,25 +3,28 @@ package com.stackroute.domain;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 public class Actor{
-    private  String gender;
     private  String Name;
+    private  String Gender;
+    private int Age;
 
-    private int age;
-
-    public void setName(String name) {
-        Name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGender(String Gender) {
+        this.Gender = Gender;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(int Age) {
+        this.Age = Age;
     }
 
-    public void display()
-    {
-        System.out.println("name is : "+Name + " gender is : " +gender + " age is : " +age );
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "Gender='" + Gender + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Age=" + Age +
+                '}';
     }
 }

@@ -1,13 +1,18 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Movie {
-    private Actor Akki;
-
-    public void setAkki(Actor akki) {
-        this.Akki = akki;
+    @Autowired
+    private Actor actor;
+    public Actor getActor() {
+        return actor;
     }
-
-    public void getAkki() {
-        Akki.display();
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+    public void display() {
+        String s=actor.toString();
+        System.out.println(s);
     }
 }
